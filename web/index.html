@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Game Sinh Nhật</title>
+    <script>
+      // Hàm nhận tên người chơi từ Flutter Web
+      function receivePlayerName(playerName) {
+        console.log("Player name received from Flutter: " + playerName);
+        document.getElementById("playerName").innerText = playerName;
+      }
+
+      // Hàm gửi điểm số từ JavaScript về Flutter Web
+      function sendScoreToFlutter(score) {
+        if (window.flutterCallback) {
+          window.flutterCallback(score);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="playerName"></div>
+    <script src="main.dart.js" type="application/javascript"></script>
+  </body>
+</html>
